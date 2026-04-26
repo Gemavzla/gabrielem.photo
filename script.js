@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // SCROLL SUAVE DEL MENÚ
+  
+  // 1. SCROLL SUAVE DEL MENÚ
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ACORDEÓN DE FAQ MEJORADO
+  // 2. ACORDEÓN DE FAQ MEJORADO
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // FILTROS DE PORTAFOLIO
+  // 3. FILTROS DE PORTAFOLIO
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -56,4 +57,35 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  // 4. SLIDER ANTES Y DESPUÉS
+  const container = document.getElementById('ba-container');
+  const sliderHandle = document.getElementById('slider-handle');
+  const beforeWrapper = document.getElementById('img-before-wrap');
+  let isDragging = false;
+
+  if (container && sliderHandle && beforeWrapper) {
+    const updateSlider = (e) => {
+      if (!isDragging) return;
+      
+      const rect = container.getBoundingClientRect();
+      let x = (e.type.includes('mouse') ? e.pageX : e.touches[0].pageX) - rect.left;
+      
+      if (x < 0) x = 0;
+      if (x > rect.width) x = rect.width;
+      
+      let percentage = (x / rect.width) * 100;
+      
+      sliderHandle.style.left = `${percentage}%`;
+      beforeWrapper.style.width = `${percentage}%`;
+    };
+
+    sliderHandle.addEventListener('mousedown', () => isDragging = true);
+    window.addEventListener('mouseup', () => isDragging = false);
+    window.addEventListener('mousemove', updateSlider);
+
+    sliderHandle.addEventListener('touchstart', () => isDragging = true);
+    window.addEventListener('touchend', () => isDragging = false);
+    window.addEventListener('touchmove', updateSlider);
+  }
 });
