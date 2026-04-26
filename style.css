@@ -127,45 +127,23 @@ section { padding: 6rem 0; }
 .lightbox-nav button { background: rgba(255,255,255,0.1); border: none; color: white; font-size: 30px; padding: 15px 20px; cursor: pointer; pointer-events: auto; border-radius: 5px; transition: background 0.3s; }
 .lightbox-nav button:hover { background: rgba(24, 100, 171, 0.5); }
 
-/* ====================================================
-   NUEVO: TESTIMONIOS CARRUSEL (MARQUESINA INFINITA)
-   ==================================================== */
+/* TESTIMONIOS CARRUSEL (MARQUESINA INFINITA) */
 .testimonials-section { background: var(--color-surface); padding-top: 6rem; padding-bottom: 2rem; overflow: hidden; }
 .carousel-wrapper { width: 100%; overflow: hidden; position: relative; margin-top: 3rem; padding: 2rem 0; }
-/* Difuminado a los lados para que parezca que entran y salen */
 .carousel-wrapper::before, .carousel-wrapper::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none; }
 .carousel-wrapper::before { left: 0; background: linear-gradient(to right, var(--color-surface), transparent); }
 .carousel-wrapper::after { right: 0; background: linear-gradient(to left, var(--color-surface), transparent); }
 
-.carousel-track { 
-  display: flex; 
-  width: max-content; 
-  /* Velocidad de la animación (60s es un ritmo cómodo para leer) */
-  animation: scrollMarquee 60s linear infinite; 
-}
-.carousel-track:hover { animation-play-state: paused; } /* Pausa si pasas el ratón */
+.carousel-track { display: flex; width: max-content; animation: scrollMarquee 60s linear infinite; }
+.carousel-track:hover { animation-play-state: paused; } 
 
 @keyframes scrollMarquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.testi-card { 
-  background: var(--color-bg); 
-  width: 350px; 
-  margin-right: 2rem; 
-  padding: 2rem; 
-  border-radius: 12px; 
-  border: 1px solid var(--color-border); 
-  display: flex; flex-direction: column; justify-content: space-between; 
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-}
-.testi-card:hover { 
-  box-shadow: 0 15px 30px var(--color-primary-shadow); 
-  transform: translateY(-5px); 
-  border-color: var(--color-primary); 
-}
+.testi-card { background: var(--color-bg); width: 350px; margin-right: 2rem; padding: 2rem; border-radius: 12px; border: 1px solid var(--color-border); display: flex; flex-direction: column; justify-content: space-between; transition: var(--transition); box-shadow: var(--shadow-sm); }
+.testi-card:hover { box-shadow: 0 15px 30px var(--color-primary-shadow); transform: translateY(-5px); border-color: var(--color-primary); }
 .testi-content { font-style: italic; color: var(--color-text); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
 .testi-author { display: flex; align-items: center; gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 1rem; }
 .testi-author img { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary); box-shadow: var(--shadow-sm); }
@@ -174,7 +152,12 @@ section { padding: 6rem 0; }
 
 /* PRECIOS Y GLOW */
 .pricing-section { background: var(--color-surface); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: stretch; }
+
+/* AQUÍ SE AÑADIÓ EL MARGEN SUPERIOR PARA ARREGLAR EL CORTE DEL GLOW */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: stretch; margin-top: 3rem; } 
+
+.copy-hook-center { font-weight: 600; font-size: 1.1rem; color: var(--color-text); font-style: italic; margin-bottom: 2rem; }
+
 .pricing-card { background: var(--color-bg); padding: 3rem 2rem; border-radius: 12px; border: 1px solid var(--color-border); position: relative; display: flex; flex-direction: column; transition: var(--transition); }
 .pricing-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--color-text); }
 .pricing-card .price { font-size: 3.5rem; font-weight: 800; color: var(--color-primary); margin-bottom: 0.5rem; line-height: 1; }
@@ -184,6 +167,8 @@ section { padding: 6rem 0; }
 .pricing-card li { margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--color-text); position: relative; padding-left: 1.5rem; }
 .pricing-card li::before { content: '✓'; position: absolute; left: 0; color: var(--color-primary); font-weight: bold; }
 .pricing-card button { margin-top: auto; }
+
+/* El badge se baja un poco para no chocar tanto */
 .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: #fff; padding: 0.4rem 1.2rem; border-radius: 20px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; }
 
 @keyframes breatheGlow {
