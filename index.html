@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Millán | Fotografía Inmobiliaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER FIJO -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <div class="logo">
+        <strong>Gabriel Millán</strong>
+        <span>Fotografía Inmobiliaria</span>
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#el-problema">El Problema</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+      <a href="https://wa.link/k7jcbt" class="btn-cta">Agendar Sesión</a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 1: HERO -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Vende y Alquila Más Rápido con <span class="highlight">Imágenes que Impactan</span></h1>
+      <p>Ayudo a asesores inmobiliarios en Nueva Esparta a captar más clientes mediante fotografía profesional, videos recorridos y contenido para marca personal.</p>
+      <div class="hero-actions">
+        <a href="#planes" class="btn-primary">Conocer Planes</a>
+        <a href="#portafolio" class="btn-secondary">Ver Portafolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: EL PROBLEMA -->
+  <section id="el-problema" class="problem-section">
+    <div class="container text-center">
+      <h2>¿Estás perdiendo cierres por culpa de <span class="highlight">fotos hechas con el celular</span>?</h2>
+      <p class="problem-desc">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención.</p>
+      
+      <!-- Contenedor para el Slider Antes/Después (Estructura base) -->
+      <div class="before-after-container">
+        <div class="ba-slider">
+          <img src="https://i.postimg.cc/nLn8SWp6/IMG-6276-HDR.jpg" alt="Después (Profesional)" class="img-after">
+          <div class="img-before-wrapper">
+             <!-- Aquí iría una foto oscura de celular, usaré una de referencia por ahora -->
+            <img src="https://i.postimg.cc/pd0FpgT5/IMG-6294-HDR.jpg" alt="Antes (Celular)" class="img-before" style="filter: brightness(0.5) contrast(0.8);">
+          </div>
+          <div class="slider-handle"></div>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="icon">⏱️</div>
+          <h3>Vende más rápido</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">💰</div>
+          <h3>Defiende el valor</h3>
+        </div>
+        <div class="benefit-card">
+          <div class="icon">👔</div>
+          <h3>Posiciona tu marca</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: PORTAFOLIO -->
+  <section id="portafolio" class="portfolio-section">
+    <div class="container">
+      <h2 class="text-center">Mi <span class="highlight">Trabajo</span></h2>
+      
+      <div class="filters">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="interiores">Interiores</button>
+        <button class="filter-btn" data-filter="exteriores">Exteriores</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="interiores">
+          <img src="https://i.postimg.cc/76fT7mGf/IMG-6231-HDR.jpg" alt="Interior">
+        </div>
+        <div class="gallery-item" data-category="interiores">
+          <img src="https://i.postimg.cc/rmKtWQ0r/IMG-6273-HDR.jpg" alt="Interior">
+        </div>
+        <div class="gallery-item" data-category="exteriores">
+          <img src="https://i.postimg.cc/3RdDpn4X/IMG-6305-HDR.jpg" alt="Exterior">
+        </div>
+        <div class="gallery-item" data-category="exteriores">
+          <img src="https://i.postimg.cc/8cvJXcbv/IMG-6279-HDR.jpg" alt="Exterior">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: PLANES -->
+  <section id="planes" class="pricing-section">
+    <div class="container">
+      <h2 class="text-center">Invierte en tu <span class="highlight">Imagen Profesional</span></h2>
+      
+      <div class="pricing-grid">
+        <!-- Esencial -->
+        <div class="pricing-card">
+          <h3>Paquete Esencial</h3>
+          <p class="price">$30</p>
+          <p class="subtitle">Ideal para listados rápidos</p>
+          <ul>
+            <li>Cobertura fotográfica</li>
+            <li>Edición HDR/Flambient</li>
+            <li>2 fotos por espacio</li>
+            <li>Entrega en 48h</li>
+          </ul>
+          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar</a>
+        </div>
+
+        <!-- Estrella -->
+        <div class="pricing-card popular">
+          <div class="badge">El más popular</div>
+          <h3>Paquete Estrella</h3>
+          <p class="price">$40</p>
+          <p class="subtitle">Para destacar en redes</p>
+          <ul>
+            <li><strong>Todo lo del Esencial +</strong></li>
+            <li>Video Recorrido Vertical</li>
+            <li>Optimizado para Reels/TikTok</li>
+          </ul>
+          <a href="https://wa.link/k7jcbt" class="btn-primary w-100">Contratar Estrella</a>
+        </div>
+
+        <!-- Marca Personal -->
+        <div class="pricing-card">
+          <h3>Marca Personal</h3>
+          <p class="price">$70</p>
+          <p class="subtitle">Posiciónate como experto</p>
+          <ul>
+            <li><strong>Todo lo del Estrella +</strong></li>
+            <li>Grabación del asesor en cámara</li>
+            <li>Audio profesional (Micrófonos DJI)</li>
+          </ul>
+          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: FAQ -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <h2 class="text-center">Preguntas <span class="highlight">Frecuentes</span></h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">¿Cómo debo preparar la casa antes de que llegues?</button>
+          <div class="faq-answer"><p>Te enviaré una guía rápida en PDF con pasos sencillos: despejar mesones, abrir cortinas, encender luces y esconder objetos personales para que la propiedad luzca impecable.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">¿En cuánto tiempo entregas el material?</button>
+          <div class="faq-answer"><p>El plazo estándar de entrega es de 48 horas hábiles tras la sesión, mediante una galería web privada en alta resolución.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <h3>Gabriel Millán</h3>
+      <p>Fotógrafo especializado en bienes raíces.</p>
+      <p>Brindando servicio en toda la Isla de Margarita, Nueva Esparta.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/gabrielem.photo/" target="_blank">Instagram</a>
+        <a href="mailto:contacto@gemastudio.com">Correo</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
