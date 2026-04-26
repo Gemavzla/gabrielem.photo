@@ -1,6 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // 1. SCROLL SUAVE
+  // 1. ANIMACIONES DE REVELADO AL HACER SCROLL (INTERSECTION OBSERVER)
+  const revealElements = document.querySelectorAll('.reveal');
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Opcional: Descomenta la siguiente línea si quieres que la animación suceda SOLO LA PRIMERA VEZ
+        // observer.unobserve(entry.target); 
+      } else {
+        // Si quieres que el efecto se repita al subir y bajar, déjalo así. 
+        entry.target.classList.remove('active');
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.15, // Se activa cuando el 15% del elemento es visible
+    rootMargin: "0px 0px -50px 0px"
+  });
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // 2. HEADER DINÁMICO (Cambia de transparente a blanco al bajar)
+  const header = document.getElementById('main-header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // 3. SCROLL SUAVE DEL MENÚ
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -11,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 2. ACORDEÓN FAQ
+  // 4. ACORDEÓN FAQ
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
@@ -26,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 3. FILTROS DE PORTAFOLIO
+  // 5. FILTROS DE PORTAFOLIO
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -38,14 +70,16 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryItems.forEach(item => {
         if(filter === 'todos' || item.getAttribute('data-category') === filter) {
           item.style.display = 'block';
+          setTimeout(() => item.classList.add('active'), 50); // Re-animar al filtrar
         } else {
           item.style.display = 'none';
+          item.classList.remove('active');
         }
       });
     });
   });
 
-  // 4. SLIDER ANTES/DESPUÉS
+  // 6. SLIDER ANTES/DESPUÉS
   const container = document.getElementById('ba-container');
   const sliderHandle = document.getElementById('slider-handle');
   const beforeWrapper = document.getElementById('img-before-wrap');
@@ -70,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('touchmove', updateSlider);
   }
 
-  // 5. VISOR DE IMÁGENES (LIGHTBOX)
+  // 7. VISOR DE IMÁGENES (LIGHTBOX)
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeLightbox = document.querySelector('.close-lightbox');
@@ -79,7 +113,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImgIndex = 0;
   let visibleImages = [];
 
-  // Actualizar array de imágenes visibles basado en filtros
   function updateVisibleImages() {
     visibleImages = Array.from(document.querySelectorAll('.gallery-item'))
       .filter(item => item.style.display !== 'none')
@@ -99,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.src = src;
     lightbox.style.display = 'flex';
     setTimeout(() => lightbox.classList.add('active'), 10);
-    document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+    document.body.style.overflow = 'hidden';
   }
 
   function hideLightbox() {
@@ -123,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     lightboxImg.src = visibleImages[currentImgIndex];
   });
 
-  // Navegación con teclado
   document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('active')) {
       if (e.key === 'Escape') hideLightbox();
@@ -132,30 +164,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 6. MODALES DE PLANES (B2B)
+  // 8. MODALES DE PLANES 
   const planData = {
     esencial: {
       title: "Paquete Esencial",
       price: "30€",
       msg: "Hola Gabriel, me interesa agendar el Paquete Esencial de Fotografía.",
       includes: [
-        "1 a 2 horas de cobertura fotográfica en la propiedad",
-        "Técnica HDR avanzada para exposición perfecta",
-        "2 fotografías por espacio (ángulos principales)",
-        "Entrega en 48 horas hábiles",
+        "Cobertura fotográfica profesional de la propiedad",
+        "Técnica HDR/Flambient para exposición perfecta",
+        "2 fotografías por espacio principal",
         "Asesoramiento para preparación del inmueble"
       ]
     },
     estrella: {
       title: "Paquete Estrella",
       price: "45€",
-      msg: "Hola Gabriel, me interesa agendar el Paquete Estrella (Fotos + Video Reel).",
+      msg: "Hola Gabriel, me interesa agendar el Paquete Estrella (Fotos + Video).",
       includes: [
         "Todo lo del paquete Esencial",
         "Grabación de Video Recorrido en formato vertical",
         "Edición optimizada para Reels de Instagram y TikTok",
-        "Música en tendencia y transiciones dinámicas",
-        "Entrega simultánea de fotos y video"
+        "Transiciones dinámicas y música en tendencia"
       ]
     },
     premium: {
@@ -164,10 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
       msg: "Hola Gabriel, me interesa el Paquete Premium Asesor para mi marca personal.",
       includes: [
         "Todo lo del paquete Estrella",
-        "Grabación del asesor presentando la propiedad en cámara",
-        "Captura de audio profesional (Micrófonos inalámbricos DJI)",
-        "Edición final estilo reportaje inmobiliario",
-        "Dirección de cámara y apoyo con el guion el día de la sesión"
+        "Grabación tuya presentando la propiedad frente a cámara",
+        "Captura de audio profesional con micrófonos DJI",
+        "Dirección de cámara el día de la sesión"
       ]
     }
   };
@@ -185,7 +214,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const planId = btn.getAttribute('data-plan');
       const data = planData[planId];
       
-      // Llenar datos
       modalTitle.textContent = data.title;
       modalPrice.textContent = data.price;
       
@@ -196,12 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
         modalIncludes.appendChild(li);
       });
 
-      // Crear link de Whatsapp dinámico
       const phone = "584123590065";
       const encodedMsg = encodeURIComponent(data.msg);
       modalBtn.href = `https://wa.me/${phone}?text=${encodedMsg}`;
 
-      // Mostrar modal
       modal.style.display = 'flex';
       setTimeout(() => modal.classList.add('active'), 10);
       document.body.style.overflow = 'hidden';
