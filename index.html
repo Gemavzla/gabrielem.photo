@@ -28,7 +28,7 @@
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
-      <a href="https://wa.link/k7jcbt" class="btn-cta">Agendar Sesión</a>
+      <a href="https://wa.me/584123590065" target="_blank" class="btn-cta">Agendar Sesión</a>
     </div>
   </header>
 
@@ -49,16 +49,21 @@
   <section id="el-problema" class="problem-section">
     <div class="container text-center">
       <h2>¿Estás perdiendo cierres por culpa de <span class="highlight">fotos hechas con el celular</span>?</h2>
-      <p class="problem-desc">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención.</p>
+      <p class="problem-desc">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención. Desliza para ver la diferencia entre un celular (izquierda) y un trabajo profesional (derecha).</p>
       
-      <!-- Contenedor para el Slider Antes/Después (Estructura base) -->
-      <div class="before-after-container">
-        <div class="ba-slider">
-          <img src="https://i.postimg.cc/nLn8SWp6/IMG-6276-HDR.jpg" alt="Después (Profesional)" class="img-after">
-          <div class="img-before-wrapper">
-            <img src="https://i.postimg.cc/pd0FpgT5/IMG-6294-HDR.jpg" alt="Antes (Celular)" class="img-before" style="filter: brightness(0.5) contrast(0.8);">
-          </div>
-          <div class="slider-handle"></div>
+      <!-- Contenedor para el Slider Antes/Después -->
+      <div class="before-after-container" id="ba-container">
+        <!-- Imagen DESPUÉS (Fondo / Profesional) -->
+        <img src="https://i.postimg.cc/76z99J98/Firefly-Gemini-Flash-Interior-real-estate-photography-of-an-average-modern-apartment-living-room-Sh.png" alt="Fotografía Profesional HDR" class="img-after">
+        
+        <!-- Imagen ANTES (Capa superior que se recorta / Celular) -->
+        <div class="img-before-wrapper" id="img-before-wrap">
+          <img src="https://i.postimg.cc/pL8d22sn/Firefly-Gemini-Flash-no-oscura-de-noche-oscura-de-exposicion-864531.png" alt="Fotografía Celular Oscura" class="img-before">
+        </div>
+        
+        <!-- Línea arrastrable -->
+        <div class="slider-handle" id="slider-handle">
+          <div class="slider-arrows">◀ ▶</div>
         </div>
       </div>
 
@@ -83,7 +88,6 @@
   <section id="sobre-mi" class="about-section">
     <div class="container about-grid">
       <div class="about-image">
-        <!-- Reemplaza con tu foto profesional sosteniendo cámara/estabilizador -->
         <img src="https://i.postimg.cc/wj5bnn8J/SAVE-20260220-135544.jpg" alt="Gabriel Millán - Fotógrafo Inmobiliario">
       </div>
       <div class="about-content">
@@ -109,24 +113,50 @@
         <button class="filter-btn active" data-filter="todos">Todos</button>
         <button class="filter-btn" data-filter="interiores">Interiores</button>
         <button class="filter-btn" data-filter="exteriores">Exteriores</button>
+        <button class="filter-btn" data-filter="detalles">Detalles & Baños</button>
       </div>
 
       <div class="gallery-grid">
+        <!-- Interiores HDR Reales -->
         <div class="gallery-item" data-category="interiores">
-          <img src="https://i.postimg.cc/76fT7mGf/IMG-6231-HDR.jpg" alt="Interior">
-          <div class="gallery-overlay"><span>Sala de Estar - Luz Natural</span></div>
+          <img src="https://i.postimg.cc/PrszXqMB/IMG-6276-HDR.jpg" alt="Interior Sala Amplia">
+          <div class="gallery-overlay"><span>Sala de Estar - Composición Abierta</span></div>
         </div>
         <div class="gallery-item" data-category="interiores">
-          <img src="https://i.postimg.cc/rmKtWQ0r/IMG-6273-HDR.jpg" alt="Interior">
-          <div class="gallery-overlay"><span>Cocina - Composición Flambient</span></div>
+          <img src="https://i.postimg.cc/X7Scjv8S/IMG-6279-HDR.jpg" alt="Interior Comedor">
+          <div class="gallery-overlay"><span>Comedor y Cocina Integrada</span></div>
+        </div>
+        <div class="gallery-item" data-category="interiores">
+          <img src="https://i.postimg.cc/kMtvPSxn/IMG-6273-HDR.jpg" alt="Interior Cocina Roja">
+          <div class="gallery-overlay"><span>Cocina - Equilibrio de Luz Natural</span></div>
+        </div>
+        
+        <!-- Exteriores y Fachadas -->
+        <div class="gallery-item" data-category="exteriores">
+          <img src="https://i.postimg.cc/GhwJLpQR/IMG-6285-HDR.jpg" alt="Exterior Terraza">
+          <div class="gallery-overlay"><span>Terraza Cubierta</span></div>
         </div>
         <div class="gallery-item" data-category="exteriores">
-          <img src="https://i.postimg.cc/3RdDpn4X/IMG-6305-HDR.jpg" alt="Exterior">
-          <div class="gallery-overlay"><span>Fachada Principal</span></div>
+          <img src="https://i.postimg.cc/WbGmhPWq/IMG-6305-HDR.jpg" alt="Fachada Casa">
+          <div class="gallery-overlay"><span>Fachada Principal HDR</span></div>
         </div>
         <div class="gallery-item" data-category="exteriores">
-          <img src="https://i.postimg.cc/8cvJXcbv/IMG-6279-HDR.jpg" alt="Exterior">
-          <div class="gallery-overlay"><span>Área de Piscina</span></div>
+          <img src="https://i.postimg.cc/dtPms0B8/IMG-6294-HDR.jpg" alt="Exterior Jardín">
+          <div class="gallery-overlay"><span>Área de Jardín y Estacionamiento</span></div>
+        </div>
+
+        <!-- Detalles, Habitaciones y Baños (Incluyendo IA como referencia técnica) -->
+        <div class="gallery-item" data-category="detalles">
+          <img src="https://i.postimg.cc/G2DKKTKn/Firefly-Gemini-Flash-Interior-real-estate-photography-of-a-master-bedroom-16mm-lens-from-the-corner.png" alt="Habitación Principal">
+          <div class="gallery-overlay"><span>Dormitorio - Perspectiva 16mm</span></div>
+        </div>
+        <div class="gallery-item" data-category="detalles">
+          <img src="https://i.postimg.cc/C1877nNQ/Firefly-Gemini-Flash-Interior-real-estate-photography-of-a-compact-modern-bathroom-Shot-tightly-wit.png" alt="Baño Moderno">
+          <div class="gallery-overlay"><span>Baño - Optimización de Espacio</span></div>
+        </div>
+        <div class="gallery-item" data-category="detalles">
+          <img src="https://i.postimg.cc/tT6kknkj/Firefly-Gemini-Flash-Interior-real-estate-photography-of-a-practical-modern-kitchen-in-an-apartment.png" alt="Cocina Detalle">
+          <div class="gallery-overlay"><span>Cocina - Detalle de Materiales</span></div>
         </div>
       </div>
     </div>
@@ -150,7 +180,7 @@
             <li>2 fotos por espacio</li>
             <li>Entrega en 48h</li>
           </ul>
-          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar</a>
+          <a href="https://wa.me/584123590065" target="_blank" class="btn-secondary w-100">Contratar</a>
         </div>
 
         <!-- Estrella (El más popular) -->
@@ -165,7 +195,7 @@
             <li>Optimizado para Reels/TikTok</li>
             <li>Transiciones dinámicas</li>
           </ul>
-          <a href="https://wa.link/k7jcbt" class="btn-primary w-100">Contratar Estrella</a>
+          <a href="https://wa.me/584123590065" target="_blank" class="btn-primary w-100">Contratar Estrella</a>
         </div>
 
         <!-- Premium Asesor -->
@@ -179,16 +209,8 @@
             <li>Grabación de ti presentando la propiedad</li>
             <li>Audio profesional (Micrófonos DJI)</li>
           </ul>
-          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar Premium</a>
+          <a href="https://wa.me/584123590065" target="_blank" class="btn-secondary w-100">Contratar Premium</a>
         </div>
-      </div>
-      
-      <div class="extras-section">
-        <h3>Extras a la carta</h3>
-        <ul class="extras-list">
-          <li><span>Amoblamiento Digital:</span> 10€ por foto</li>
-          <li><span>Vuelo de Dron (Tomas Aéreas):</span> Consultar tarifa</li>
-        </ul>
       </div>
     </div>
   </section>
@@ -198,23 +220,52 @@
     <div class="container">
       <h2 class="text-center">Preguntas <span class="highlight">Frecuentes</span></h2>
       <div class="faq-container">
+        
         <div class="faq-item">
           <button class="faq-question">¿Cómo debo preparar la casa antes de que llegues?</button>
           <div class="faq-answer"><p>Te enviaré una guía rápida en PDF con pasos sencillos: despejar mesones, abrir cortinas, encender luces y esconder objetos personales para que la propiedad luzca impecable.</p></div>
         </div>
+
         <div class="faq-item">
-          <button class="faq-question">¿En cuánto tiempo entregas el material?</button>
-          <div class="faq-answer"><p>El plazo estándar de entrega es de 48 horas hábiles tras la sesión, mediante una galería web privada en alta resolución.</p></div>
+          <button class="faq-question">¿Qué pasa si el día de la sesión hay mal clima o está nublado?</button>
+          <div class="faq-answer"><p>Si el clima es muy adverso (lluvia fuerte), reprogramamos sin costo adicional para garantizar el mejor resultado. Sin embargo, si solo está nublado, mi técnica de iluminación artificial permite simular días soleados en los interiores y puedo reemplazar digitalmente los cielos grises en las fotos exteriores.</p></div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-question">¿Cuánto tiempo dura la sesión fotográfica en la propiedad?</button>
+          <div class="faq-answer"><p>Depende del tamaño del inmueble y del paquete elegido, pero generalmente una sesión estándar dura entre 1 y 2 horas. Trabajo de manera eficiente para no quitarte mucho tiempo a ti ni a los propietarios.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">¿En qué formato y cómo me entregas las fotos y videos?</button>
+          <div class="faq-answer"><p>Te enviaré un enlace privado a una galería en la nube donde podrás descargar todo el material. Las fotos se entregan en alta resolución (para impresión) y en resolución web (optimizadas para carga rápida). Los videos se entregan en formato MP4 vertical u horizontal, según lo que hayamos acordado.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">¿Por qué debería contratar un fotógrafo si mi celular toma buenas fotos?</button>
+          <div class="faq-answer"><p>Las cámaras de los celulares tienden a distorsionar los espacios y no manejan bien los contrastes extremos de luz (ventanas brillantes y cuartos oscuros). Yo utilizo lentes gran angular profesionales sin distorsión y técnicas de iluminación (flambient) que muestran el tamaño real y el color exacto de la propiedad, algo que los celulares aún no pueden replicar.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">¿Ofreces el servicio de amoblamiento digital en propiedades vacías?</button>
+          <div class="faq-answer"><p>Sí, ofrezco el servicio de 'Virtual Staging'. Por una tarifa adicional por foto, puedo agregar digitalmente muebles y decoración realista a espacios vacíos. Esto ayuda muchísimo a que los compradores imaginen el potencial real del inmueble.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">¿Haces descuentos si tengo varias propiedades para fotografiar?</button>
+          <div class="faq-answer"><p>¡Sí! Si eres un asesor activo o representas a una inmobiliaria y tienes 3 o más propiedades en un mismo mes, ofrezco planes corporativos con tarifas preferenciales. Escríbeme por WhatsApp para armarte un paquete a medida.</p></div>
+        </div>
+
         <div class="faq-item">
           <button class="faq-question">¿Te trasladas a cualquier parte de la isla?</button>
           <div class="faq-answer"><p>Sí, brindo servicio en toda la Isla de Margarita. Ciertas zonas muy alejadas podrían requerir un pequeño recargo por viáticos que acordaremos previamente.</p></div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- FOOTER (NUEVO DISEÑO 3 COLUMNAS) -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-col brand-col">
@@ -237,8 +288,8 @@
 
       <div class="footer-col contact-col">
         <h4>Contacto</h4>
-        <p>Email: <a href="mailto:contacto@gemastudio.com">contacto@gemastudio.com</a></p>
-        <p>WhatsApp: <a href="https://wa.link/k7jcbt">+58 (000) 000-0000</a></p>
+        <p>Email: <a href="mailto:gabrielmillan6@gmail.com">gabrielmillan6@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/584123590065" target="_blank">+58 412-3590065</a></p>
         <p>Horario: Lunes a Sábado, 9AM - 6PM</p>
         <a href="https://www.instagram.com/gabrielem.photo/" target="_blank" class="instagram-link">Sígueme en Instagram @gabrielem.photo</a>
       </div>
