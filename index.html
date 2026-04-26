@@ -9,10 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="fade-in-load"> <!-- Clase para animar la carga inicial -->
 
-  <!-- HEADER FIJO -->
-  <header class="site-header">
+  <!-- HEADER FIJO QUE CAMBIA AL HACER SCROLL -->
+  <header class="site-header" id="main-header">
     <div class="container header-wrap">
       <div class="logo">
         <strong>Gabriel Millán</strong>
@@ -35,7 +35,7 @@
   <!-- SECCIÓN 1: HERO -->
   <section id="inicio" class="hero-section">
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
+    <div class="container hero-content reveal">
       <h1>Vende y Alquila Más Rápido con <span class="highlight">Imágenes que Impactan</span></h1>
       <p>Ayudo a asesores inmobiliarios en Nueva Esparta a captar más clientes mediante fotografía profesional, videos recorridos y contenido para marca personal.</p>
       <div class="hero-actions">
@@ -48,17 +48,15 @@
   <!-- SECCIÓN 2: EL PROBLEMA -->
   <section id="el-problema" class="problem-section">
     <div class="container text-center">
-      <h2>¿Estás perdiendo cierres por culpa de <span class="highlight">fotos hechas con el celular</span>?</h2>
-      <p class="problem-desc">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención. Desliza para ver la diferencia.</p>
+      <h2 class="reveal">¿Estás perdiendo cierres por culpa de <span class="highlight">fotos hechas con el celular</span>?</h2>
+      <p class="problem-desc reveal">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención. Desliza para ver la diferencia.</p>
       
-      <!-- Contenedor para el Slider Antes/Después -->
-      <div class="before-after-container" id="ba-container">
+      <!-- Contenedor Slider -->
+      <div class="before-after-container reveal" id="ba-container">
         <img src="https://i.postimg.cc/76z99J98/Firefly-Gemini-Flash-Interior-real-estate-photography-of-an-average-modern-apartment-living-room-Sh.png" alt="Fotografía Profesional HDR" class="img-after">
-        
         <div class="img-before-wrapper" id="img-before-wrap">
           <img src="https://i.postimg.cc/pL8d22sn/Firefly-Gemini-Flash-no-oscura-de-noche-oscura-de-exposicion-864531.png" alt="Fotografía Celular Oscura" class="img-before">
         </div>
-        
         <div class="slider-handle" id="slider-handle">
           <div class="slider-arrows">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
@@ -68,15 +66,15 @@
       </div>
 
       <div class="benefits-grid">
-        <div class="benefit-card">
+        <div class="benefit-card reveal" style="transition-delay: 0.1s;">
           <div class="icon">⏱️</div>
           <h3>Vende más rápido</h3>
         </div>
-        <div class="benefit-card">
+        <div class="benefit-card reveal" style="transition-delay: 0.2s;">
           <div class="icon">💰</div>
           <h3>Defiende el valor</h3>
         </div>
-        <div class="benefit-card">
+        <div class="benefit-card reveal" style="transition-delay: 0.3s;">
           <div class="icon">👔</div>
           <h3>Posiciona tu marca</h3>
         </div>
@@ -87,10 +85,11 @@
   <!-- SECCIÓN: SOBRE MÍ -->
   <section id="sobre-mi" class="about-section">
     <div class="container about-grid">
-      <div class="about-image">
-        <img src="https://i.postimg.cc/wj5bnn8J/SAVE-20260220-135544.jpg" alt="Gabriel Millán - Fotógrafo Inmobiliario">
+      <div class="about-image reveal">
+        <!-- SOMBRA AZUL EN LA FOTO -->
+        <img class="blue-shadow" src="https://i.postimg.cc/wj5bnn8J/SAVE-20260220-135544.jpg" alt="Gabriel Millán - Fotógrafo Inmobiliario">
       </div>
-      <div class="about-content">
+      <div class="about-content reveal">
         <p class="tagline">La confianza visual vende.</p>
         <h2>Hola, soy <span class="highlight">Gabriel Millán</span></h2>
         <p>Como fotógrafo en Nueva Esparta, entiendo que tu tiempo es valioso y que tu reputación está en cada listado.</p>
@@ -100,46 +99,46 @@
     </div>
   </section>
 
-  <div class="parallax-divider"></div>
+  <div class="parallax-divider reveal"></div>
 
   <!-- SECCIÓN 3: PORTAFOLIO -->
   <section id="portafolio" class="portfolio-section">
     <div class="container">
-      <h2 class="text-center">Mi <span class="highlight">Trabajo</span></h2>
-      <p class="text-center section-subtitle">Haz clic en cualquier imagen para verla en pantalla completa.</p>
+      <h2 class="text-center reveal">Mi <span class="highlight">Trabajo</span></h2>
+      <p class="text-center section-subtitle reveal">Haz clic en cualquier imagen para verla en pantalla completa.</p>
       
-      <div class="filters">
+      <div class="filters reveal">
         <button class="filter-btn active" data-filter="todos">Todos</button>
         <button class="filter-btn" data-filter="interiores">Interiores</button>
         <button class="filter-btn" data-filter="exteriores">Exteriores</button>
       </div>
 
       <div class="gallery-grid">
-        <!-- Interiores -->
-        <div class="gallery-item" data-category="interiores">
+        <!-- Interiores CON SOMBRA AZUL -->
+        <div class="gallery-item reveal blue-shadow-hover" data-category="interiores">
           <img src="https://i.postimg.cc/PrszXqMB/IMG-6276-HDR.jpg" alt="Sala de Estar">
         </div>
-        <div class="gallery-item" data-category="interiores">
+        <div class="gallery-item reveal blue-shadow-hover" style="transition-delay: 0.1s;" data-category="interiores">
           <img src="https://i.postimg.cc/kMtvPSxn/IMG-6273-HDR.jpg" alt="Cocina Roja">
         </div>
-        <div class="gallery-item" data-category="interiores">
+        <div class="gallery-item reveal blue-shadow-hover" style="transition-delay: 0.2s;" data-category="interiores">
           <img src="https://i.postimg.cc/G2DKKTKn/Firefly-Gemini-Flash-Interior-real-estate-photography-of-a-master-bedroom-16mm-lens-from-the-corner.png" alt="Habitación Principal">
         </div>
-        <!-- Exteriores -->
-        <div class="gallery-item" data-category="exteriores">
+        <!-- Exteriores CON SOMBRA AZUL -->
+        <div class="gallery-item reveal blue-shadow-hover" data-category="exteriores">
           <img src="https://i.postimg.cc/GhwJLpQR/IMG-6285-HDR.jpg" alt="Terraza">
         </div>
-        <div class="gallery-item" data-category="exteriores">
+        <div class="gallery-item reveal blue-shadow-hover" style="transition-delay: 0.1s;" data-category="exteriores">
           <img src="https://i.postimg.cc/WbGmhPWq/IMG-6305-HDR.jpg" alt="Fachada">
         </div>
-        <div class="gallery-item" data-category="exteriores">
+        <div class="gallery-item reveal blue-shadow-hover" style="transition-delay: 0.2s;" data-category="exteriores">
           <img src="https://i.postimg.cc/dtPms0B8/IMG-6294-HDR.jpg" alt="Jardín">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VISOR DE IMÁGENES A PANTALLA COMPLETA (LIGHTBOX) -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <span class="close-lightbox">&times;</span>
     <div class="lightbox-content">
@@ -154,12 +153,12 @@
   <!-- SECCIÓN 4: PLANES -->
   <section id="planes" class="pricing-section">
     <div class="container">
-      <h2 class="text-center">Invierte en tu <span class="highlight">Imagen Profesional</span></h2>
-      <p class="text-center copy-hook-center">"No es un gasto en fotografía, es una inversión para asegurar tu comisión."</p>
+      <h2 class="text-center reveal">Invierte en tu <span class="highlight">Imagen Profesional</span></h2>
+      <p class="text-center copy-hook-center reveal">"No es un gasto en fotografía, es una inversión para asegurar tu comisión."</p>
       
       <div class="pricing-grid">
         <!-- Esencial -->
-        <div class="pricing-card">
+        <div class="pricing-card reveal">
           <h3>Esencial</h3>
           <p class="price">30€</p>
           <p class="subtitle">Solo fotografía profesional.</p>
@@ -172,8 +171,8 @@
           <button class="btn-secondary w-100 open-modal" data-plan="esencial">Ver Detalles</button>
         </div>
 
-        <!-- Estrella (El más popular con Glow) -->
-        <div class="pricing-card popular glow-effect">
+        <!-- Estrella -->
+        <div class="pricing-card popular glow-effect reveal" style="transition-delay: 0.2s;">
           <div class="badge">El más popular</div>
           <h3>Estrella</h3>
           <p class="price">45€</p>
@@ -188,7 +187,7 @@
         </div>
 
         <!-- Premium Asesor -->
-        <div class="pricing-card">
+        <div class="pricing-card reveal" style="transition-delay: 0.4s;">
           <h3>Premium Asesor</h3>
           <p class="price">60€</p>
           <p class="subtitle">Posiciónate como el experto.</p>
@@ -204,14 +203,13 @@
     </div>
   </section>
 
-  <!-- MODAL DE PLANES (Ventana emergente) -->
+  <!-- MODAL DE PLANES CON TÉRMINOS ACTUALIZADOS -->
   <div id="plan-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
       <h2 id="modal-title">Paquete</h2>
       <p id="modal-price" class="modal-price"></p>
       
-      <!-- Galería de muestra dentro del modal -->
       <div class="modal-gallery">
         <img src="https://i.postimg.cc/PrszXqMB/IMG-6276-HDR.jpg" alt="Muestra 1">
         <img src="https://i.postimg.cc/kMtvPSxn/IMG-6273-HDR.jpg" alt="Muestra 2">
@@ -220,15 +218,13 @@
 
       <div class="modal-info">
         <h3>¿QUÉ INCLUYE ESTE PAQUETE?</h3>
-        <ul id="modal-includes">
-          <!-- Se llena por JS -->
-        </ul>
+        <ul id="modal-includes"></ul>
 
         <h3>TÉRMINOS Y CONDICIONES GENERALES</h3>
         <div class="modal-terms">
-          <p><strong>Entregas:</strong> Plazo de 48h hábiles mediante galería web privada. No se entregan fotos sin editar.</p>
-          <p><strong>Pagos:</strong> Anticipo del 50% para agendar, 50% restante al entregar.</p>
-          <p><strong>Derechos:</strong> Uso en RRSS permitido. Prohibido uso comercial por terceros sin mención.</p>
+          <p><strong>Entregas:</strong> Plazo de 48h hábiles mediante galería web privada. No se entregan fotos sin editar (RAW) y la selección del material final queda a criterio del fotógrafo para garantizar la calidad.</p>
+          <p><strong>Pagos:</strong> Los precios están calculados en Euros. El pago debe realizarse antes de la entrega final del material. Acepto Transferencia, Pago Móvil, Binance, Wally y divisas en efectivo.</p>
+          <p><strong>Derechos:</strong> Uso en tus RRSS y portales inmobiliarios permitido. Prohibido su uso comercial por terceros sin mención ni autorización.</p>
         </div>
 
         <a id="modal-btn" href="#" target="_blank" class="btn-primary w-100">AGENDAR POR WHATSAPP</a>
@@ -239,48 +235,33 @@
   <!-- SECCIÓN 5: FAQ -->
   <section id="faq" class="faq-section">
     <div class="container">
-      <h2 class="text-center">Preguntas <span class="highlight">Frecuentes</span></h2>
-      <div class="faq-container">
-        
+      <h2 class="text-center reveal">Preguntas <span class="highlight">Frecuentes</span></h2>
+      <div class="faq-container reveal">
         <div class="faq-item">
           <button class="faq-question">¿Cómo debo preparar la casa antes de que llegues?</button>
-          <div class="faq-answer"><p>Te enviaré una guía rápida en PDF con pasos sencillos: despejar mesones, abrir cortinas, encender luces y esconder objetos personales para que la propiedad luzca impecable.</p></div>
+          <div class="faq-answer"><p>Te enviaré una guía rápida en PDF con pasos sencillos: despejar mesones, abrir cortinas, encender luces y esconder objetos personales.</p></div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question">¿Qué pasa si el día de la sesión hay mal clima o está nublado?</button>
-          <div class="faq-answer"><p>Si el clima es muy adverso (lluvia fuerte), reprogramamos sin costo adicional para garantizar el mejor resultado. Sin embargo, si solo está nublado, mi técnica de iluminación artificial permite simular días soleados en los interiores y puedo reemplazar digitalmente los cielos grises en las fotos exteriores.</p></div>
+          <div class="faq-answer"><p>Si llueve fuerte, reprogramamos sin costo. Si está nublado, mi técnica de iluminación artificial simula días soleados y puedo reemplazar digitalmente los cielos grises.</p></div>
         </div>
-
         <div class="faq-item">
-          <button class="faq-question">¿Cuánto tiempo dura la sesión fotográfica en la propiedad?</button>
-          <div class="faq-answer"><p>Depende del tamaño del inmueble y del paquete elegido, pero generalmente una sesión estándar dura entre 1 y 2 horas. Trabajo de manera eficiente para no quitarte mucho tiempo a ti ni a los propietarios.</p></div>
+          <button class="faq-question">¿Cuánto tiempo dura la sesión fotográfica?</button>
+          <div class="faq-answer"><p>Generalmente entre 1 y 2 horas. Trabajo de manera eficiente para no quitarte mucho tiempo.</p></div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">¿En qué formato y cómo me entregas las fotos y videos?</button>
-          <div class="faq-answer"><p>Te enviaré un enlace privado a una galería en la nube donde podrás descargar todo el material. Las fotos se entregan en alta resolución (para impresión) y en resolución web (optimizadas para carga rápida). Los videos se entregan en formato MP4 vertical u horizontal, según lo que hayamos acordado.</p></div>
-        </div>
-
         <div class="faq-item">
           <button class="faq-question">¿Por qué debería contratar un fotógrafo si mi celular toma buenas fotos?</button>
-          <div class="faq-answer"><p>Las cámaras de los celulares tienden a distorsionar los espacios y no manejan bien los contrastes extremos de luz (ventanas brillantes y cuartos oscuros). Yo utilizo lentes gran angular profesionales sin distorsión y técnicas de iluminación (flambient) que muestran el tamaño real y el color exacto de la propiedad, algo que los celulares aún no pueden replicar.</p></div>
+          <div class="faq-answer"><p>Los celulares distorsionan espacios y no manejan contrastes extremos. Yo utilizo lentes gran angular sin distorsión y técnicas de iluminación (flambient) que muestran el tamaño real y el color exacto.</p></div>
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">¿Haces descuentos si tengo varias propiedades para fotografiar?</button>
-          <div class="faq-answer"><p>¡Sí! Si eres un asesor activo o representas a una inmobiliaria y tienes 3 o más propiedades en un mismo mes, ofrezco planes corporativos con tarifas preferenciales. Escríbeme por WhatsApp para armarte un paquete a medida.</p></div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
+  <!-- FOOTER AZUL CON DEGRADADO -->
+  <footer class="site-footer gradient-footer">
+    <div class="container footer-grid reveal">
       <div class="footer-col brand-col">
-        <div class="logo">
+        <div class="logo logo-footer">
           <strong>Gabriel Millán</strong>
           <span>Fotografía Inmobiliaria</span>
         </div>
