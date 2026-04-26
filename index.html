@@ -6,7 +6,7 @@
   <title>Gabriel Millán | Fotografía Inmobiliaria</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +22,7 @@
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#el-problema">El Problema</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
           <li><a href="#portafolio">Portafolio</a></li>
           <li><a href="#planes">Planes</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -55,7 +56,6 @@
         <div class="ba-slider">
           <img src="https://i.postimg.cc/nLn8SWp6/IMG-6276-HDR.jpg" alt="Después (Profesional)" class="img-after">
           <div class="img-before-wrapper">
-             <!-- Aquí iría una foto oscura de celular, usaré una de referencia por ahora -->
             <img src="https://i.postimg.cc/pd0FpgT5/IMG-6294-HDR.jpg" alt="Antes (Celular)" class="img-before" style="filter: brightness(0.5) contrast(0.8);">
           </div>
           <div class="slider-handle"></div>
@@ -79,10 +79,31 @@
     </div>
   </section>
 
+  <!-- SECCIÓN NUEVA: SOBRE MÍ -->
+  <section id="sobre-mi" class="about-section">
+    <div class="container about-grid">
+      <div class="about-image">
+        <!-- Reemplaza con tu foto profesional sosteniendo cámara/estabilizador -->
+        <img src="https://i.postimg.cc/wj5bnn8J/SAVE-20260220-135544.jpg" alt="Gabriel Millán - Fotógrafo Inmobiliario">
+      </div>
+      <div class="about-content">
+        <p class="tagline">La confianza visual vende.</p>
+        <h2>Hola, soy <span class="highlight">Gabriel Millán</span></h2>
+        <p>Como fotógrafo en Nueva Esparta, entiendo que tu tiempo es valioso y que tu reputación está en cada listado.</p>
+        <p>Mi objetivo no es solo tomar fotos bonitas, sino entregarte herramientas visuales que justifiquen tus honorarios, atraigan al comprador ideal y posicionen tu nombre en el mercado inmobiliario de la isla.</p>
+        <p class="copy-hook">"Tus propiedades compiten con miles en la isla. Haz que el cliente se detenga en la tuya."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EFECTO PARALLAX DIVISOR -->
+  <div class="parallax-divider"></div>
+
   <!-- SECCIÓN 3: PORTAFOLIO -->
   <section id="portafolio" class="portfolio-section">
     <div class="container">
       <h2 class="text-center">Mi <span class="highlight">Trabajo</span></h2>
+      <p class="text-center section-subtitle">Explora cómo luce una propiedad cuando se captura con la luz y perspectiva correcta.</p>
       
       <div class="filters">
         <button class="filter-btn active" data-filter="todos">Todos</button>
@@ -93,15 +114,19 @@
       <div class="gallery-grid">
         <div class="gallery-item" data-category="interiores">
           <img src="https://i.postimg.cc/76fT7mGf/IMG-6231-HDR.jpg" alt="Interior">
+          <div class="gallery-overlay"><span>Sala de Estar - Luz Natural</span></div>
         </div>
         <div class="gallery-item" data-category="interiores">
           <img src="https://i.postimg.cc/rmKtWQ0r/IMG-6273-HDR.jpg" alt="Interior">
+          <div class="gallery-overlay"><span>Cocina - Composición Flambient</span></div>
         </div>
         <div class="gallery-item" data-category="exteriores">
           <img src="https://i.postimg.cc/3RdDpn4X/IMG-6305-HDR.jpg" alt="Exterior">
+          <div class="gallery-overlay"><span>Fachada Principal</span></div>
         </div>
         <div class="gallery-item" data-category="exteriores">
           <img src="https://i.postimg.cc/8cvJXcbv/IMG-6279-HDR.jpg" alt="Exterior">
+          <div class="gallery-overlay"><span>Área de Piscina</span></div>
         </div>
       </div>
     </div>
@@ -111,48 +136,59 @@
   <section id="planes" class="pricing-section">
     <div class="container">
       <h2 class="text-center">Invierte en tu <span class="highlight">Imagen Profesional</span></h2>
+      <p class="text-center copy-hook-center">"No es un gasto en fotografía, es una inversión para asegurar tu comisión."</p>
       
       <div class="pricing-grid">
         <!-- Esencial -->
         <div class="pricing-card">
-          <h3>Paquete Esencial</h3>
-          <p class="price">$30</p>
-          <p class="subtitle">Ideal para listados rápidos</p>
+          <h3>Esencial</h3>
+          <p class="price">30€</p>
+          <p class="subtitle">Solo fotografía profesional.</p>
           <ul>
-            <li>Cobertura fotográfica</li>
-            <li>Edición HDR/Flambient</li>
+            <li>Cobertura de la propiedad</li>
+            <li>Edición HDR avanzada</li>
             <li>2 fotos por espacio</li>
             <li>Entrega en 48h</li>
           </ul>
           <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar</a>
         </div>
 
-        <!-- Estrella -->
+        <!-- Estrella (El más popular) -->
         <div class="pricing-card popular">
           <div class="badge">El más popular</div>
-          <h3>Paquete Estrella</h3>
-          <p class="price">$40</p>
-          <p class="subtitle">Para destacar en redes</p>
+          <h3>Estrella</h3>
+          <p class="price">45€</p>
+          <p class="subtitle">Ideal para destacar en redes.</p>
           <ul>
-            <li><strong>Todo lo del Esencial +</strong></li>
+            <li><strong>Todo lo del paquete Esencial +</strong></li>
             <li>Video Recorrido Vertical</li>
             <li>Optimizado para Reels/TikTok</li>
+            <li>Transiciones dinámicas</li>
           </ul>
           <a href="https://wa.link/k7jcbt" class="btn-primary w-100">Contratar Estrella</a>
         </div>
 
-        <!-- Marca Personal -->
+        <!-- Premium Asesor -->
         <div class="pricing-card">
-          <h3>Marca Personal</h3>
-          <p class="price">$70</p>
-          <p class="subtitle">Posiciónate como experto</p>
+          <h3>Premium Asesor</h3>
+          <p class="price">60€</p>
+          <p class="subtitle">Posiciónate como el experto.</p>
+          <p class="mini-copy">"Los compradores no solo eligen la casa, eligen al asesor."</p>
           <ul>
-            <li><strong>Todo lo del Estrella +</strong></li>
-            <li>Grabación del asesor en cámara</li>
+            <li><strong>Todo lo del paquete Estrella +</strong></li>
+            <li>Grabación de ti presentando la propiedad</li>
             <li>Audio profesional (Micrófonos DJI)</li>
           </ul>
-          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar</a>
+          <a href="https://wa.link/k7jcbt" class="btn-secondary w-100">Contratar Premium</a>
         </div>
+      </div>
+      
+      <div class="extras-section">
+        <h3>Extras a la carta</h3>
+        <ul class="extras-list">
+          <li><span>Amoblamiento Digital:</span> 10€ por foto</li>
+          <li><span>Vuelo de Dron (Tomas Aéreas):</span> Consultar tarifa</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -170,20 +206,45 @@
           <button class="faq-question">¿En cuánto tiempo entregas el material?</button>
           <div class="faq-answer"><p>El plazo estándar de entrega es de 48 horas hábiles tras la sesión, mediante una galería web privada en alta resolución.</p></div>
         </div>
+        <div class="faq-item">
+          <button class="faq-question">¿Te trasladas a cualquier parte de la isla?</button>
+          <div class="faq-answer"><p>Sí, brindo servicio en toda la Isla de Margarita. Ciertas zonas muy alejadas podrían requerir un pequeño recargo por viáticos que acordaremos previamente.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (NUEVO DISEÑO 3 COLUMNAS) -->
   <footer class="site-footer">
-    <div class="container text-center">
-      <h3>Gabriel Millán</h3>
-      <p>Fotógrafo especializado en bienes raíces.</p>
-      <p>Brindando servicio en toda la Isla de Margarita, Nueva Esparta.</p>
-      <div class="social-links">
-        <a href="https://www.instagram.com/gabrielem.photo/" target="_blank">Instagram</a>
-        <a href="mailto:contacto@gemastudio.com">Correo</a>
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <div class="logo">
+          <strong>Gabriel Millán</strong>
+          <span>Fotografía Inmobiliaria</span>
+        </div>
+        <p>"Imágenes que venden. Servicio profesional en toda la Isla de Margarita."</p>
       </div>
+      
+      <div class="footer-col links-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#planes">Precios</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:contacto@gemastudio.com">contacto@gemastudio.com</a></p>
+        <p>WhatsApp: <a href="https://wa.link/k7jcbt">+58 (000) 000-0000</a></p>
+        <p>Horario: Lunes a Sábado, 9AM - 6PM</p>
+        <a href="https://www.instagram.com/gabrielem.photo/" target="_blank" class="instagram-link">Sígueme en Instagram @gabrielem.photo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Gabriel Millán. Todos los derechos reservados.</p>
     </div>
   </footer>
 
