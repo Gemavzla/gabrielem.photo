@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // 1. MENÚ MÓVIL (HAMBURGUESA) FUNCIONAL
+  // 1. MENÚ MÓVIL (HAMBURGUESA)
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mainNav = document.getElementById('main-nav');
   const siteHeader = document.getElementById('main-header');
@@ -51,7 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. ACORDEÓN FAQ
+  // 5. CLONAR TESTIMONIOS PARA CARRUSEL INFINITO
+  const testimonialTrack = document.getElementById('testimonial-track');
+  if (testimonialTrack) {
+    // Clonamos el contenido exacto de las tarjetas y lo pegamos al final
+    // para crear un efecto de "rueda" perfecta y sin fin.
+    const clone = testimonialTrack.innerHTML;
+    testimonialTrack.innerHTML += clone;
+  }
+
+  // 6. ACORDEÓN FAQ
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
@@ -66,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 6. FILTROS DE PORTAFOLIO
+  // 7. FILTROS DE PORTAFOLIO
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -87,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 7. SLIDER ANTES/DESPUÉS
+  // 8. SLIDER ANTES/DESPUÉS
   const container = document.getElementById('ba-container');
   const sliderHandle = document.getElementById('slider-handle');
   const beforeWrapper = document.getElementById('img-before-wrap');
@@ -112,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('touchmove', updateSlider);
   }
 
-  // 8. VISOR DE IMÁGENES (LIGHTBOX)
+  // 9. VISOR DE IMÁGENES (LIGHTBOX)
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeLightbox = document.querySelector('.close-lightbox');
@@ -172,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 9. MODALES DE PLANES (CON TÉRMINOS ACTUALIZADOS)
+  // 10. MODALES DE PLANES
   const planData = {
     esencial: {
       title: "Paquete Esencial",
