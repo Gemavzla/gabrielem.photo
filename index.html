@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gabriel Millán | Fotografía Inmobiliaria</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  //fonts.googleapis.com">
+  //fonts.gstatic.com" crossorigin>
+  //fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  >
 </head>
-<body class="fade-in-load"> <!-- Clase para animar la carga inicial -->
+<body class="fade-in-load">
 
   <!-- HEADER FIJO QUE CAMBIA AL HACER SCROLL -->
   <header class="site-header" id="main-header">
@@ -18,14 +18,22 @@
         <strong>Gabriel Millán</strong>
         <span>Fotografía Inmobiliaria</span>
       </div>
-      <nav class="main-nav">
+      
+      <!-- BOTÓN HAMBURGUESA MÓVIL -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+
+      <nav class="main-nav" id="main-nav">
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#el-problema">El Problema</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#portafolio">Portafolio</a></li>
-          <li><a href="#planes">Planes</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          ><a href="#inicio">Inicio</a></li>
+          ><a href="#el-problema">El Problema</a></li>
+          ><a href="#sobre-mi">Sobre mí</a></li>
+          ><a href="#portafolio">Portafolio</a></li>
+          ><a href="#planes">Planes</a></li>
+          ><a href="#faq">FAQ</a></li>
         </ul>
       </nav>
       <a href="https://wa.me/584123590065" target="_blank" class="btn-cta">Agendar Sesión</a>
@@ -51,7 +59,6 @@
       <h2 class="reveal">¿Estás perdiendo cierres por culpa de <span class="highlight">fotos hechas con el celular</span>?</h2>
       <p class="problem-desc reveal">El 90% de los compradores descartan una propiedad si las fotos no atrapan su atención. Desliza para ver la diferencia.</p>
       
-      <!-- Contenedor Slider -->
       <div class="before-after-container reveal" id="ba-container">
         <img src="https://i.postimg.cc/76z99J98/Firefly-Gemini-Flash-Interior-real-estate-photography-of-an-average-modern-apartment-living-room-Sh.png" alt="Fotografía Profesional HDR" class="img-after">
         <div class="img-before-wrapper" id="img-before-wrap">
@@ -86,7 +93,6 @@
   <section id="sobre-mi" class="about-section">
     <div class="container about-grid">
       <div class="about-image reveal">
-        <!-- SOMBRA AZUL EN LA FOTO -->
         <img class="blue-shadow" src="https://i.postimg.cc/wj5bnn8J/SAVE-20260220-135544.jpg" alt="Gabriel Millán - Fotógrafo Inmobiliario">
       </div>
       <div class="about-content reveal">
@@ -114,7 +120,6 @@
       </div>
 
       <div class="gallery-grid">
-        <!-- Interiores CON SOMBRA AZUL -->
         <div class="gallery-item reveal blue-shadow-hover" data-category="interiores">
           <img src="https://i.postimg.cc/PrszXqMB/IMG-6276-HDR.jpg" alt="Sala de Estar">
         </div>
@@ -124,7 +129,6 @@
         <div class="gallery-item reveal blue-shadow-hover" style="transition-delay: 0.2s;" data-category="interiores">
           <img src="https://i.postimg.cc/G2DKKTKn/Firefly-Gemini-Flash-Interior-real-estate-photography-of-a-master-bedroom-16mm-lens-from-the-corner.png" alt="Habitación Principal">
         </div>
-        <!-- Exteriores CON SOMBRA AZUL -->
         <div class="gallery-item reveal blue-shadow-hover" data-category="exteriores">
           <img src="https://i.postimg.cc/GhwJLpQR/IMG-6285-HDR.jpg" alt="Terraza">
         </div>
@@ -157,45 +161,42 @@
       <p class="text-center copy-hook-center reveal">"No es un gasto en fotografía, es una inversión para asegurar tu comisión."</p>
       
       <div class="pricing-grid">
-        <!-- Esencial -->
         <div class="pricing-card reveal">
           <h3>Esencial</h3>
           <p class="price">30€</p>
           <p class="subtitle">Solo fotografía profesional.</p>
           <ul>
-            <li>Cobertura de la propiedad</li>
-            <li>Edición HDR avanzada</li>
-            <li>2 fotos por espacio</li>
-            <li>Entrega en 48h</li>
+            >Cobertura de la propiedad</li>
+            >Edición HDR avanzada</li>
+            >2 fotos por espacio</li>
+            >Entrega en 48h</li>
           </ul>
           <button class="btn-secondary w-100 open-modal" data-plan="esencial">Ver Detalles</button>
         </div>
 
-        <!-- Estrella -->
         <div class="pricing-card popular glow-effect reveal" style="transition-delay: 0.2s;">
           <div class="badge">El más popular</div>
           <h3>Estrella</h3>
           <p class="price">45€</p>
           <p class="subtitle">Ideal para destacar en redes.</p>
           <ul>
-            <li><strong>Todo lo del paquete Esencial +</strong></li>
-            <li>Video Recorrido Vertical</li>
-            <li>Optimizado para Reels/TikTok</li>
-            <li>Transiciones dinámicas</li>
+            ><strong>Todo lo del paquete Esencial +</strong></li>
+            >Video Recorrido Vertical</li>
+            >Optimizado para Reels/TikTok</li>
+            >Transiciones dinámicas</li>
           </ul>
           <button class="btn-primary w-100 open-modal" data-plan="estrella">Ver Detalles</button>
         </div>
 
-        <!-- Premium Asesor -->
         <div class="pricing-card reveal" style="transition-delay: 0.4s;">
           <h3>Premium Asesor</h3>
           <p class="price">60€</p>
           <p class="subtitle">Posiciónate como el experto.</p>
           <p class="mini-copy">"Los compradores eligen al asesor."</p>
           <ul>
-            <li><strong>Todo lo del Estrella +</strong></li>
-            <li>Grabación de ti en cámara</li>
-            <li>Audio profesional (Micrófonos DJI)</li>
+            ><strong>Todo lo del Estrella +</strong></li>
+            >Grabación de ti en cámara</li>
+            >Audio profesional (Micrófonos DJI)</li>
           </ul>
           <button class="btn-secondary w-100 open-modal" data-plan="premium">Ver Detalles</button>
         </div>
@@ -203,7 +204,7 @@
     </div>
   </section>
 
-  <!-- MODAL DE PLANES CON TÉRMINOS ACTUALIZADOS -->
+  <!-- MODAL DE PLANES -->
   <div id="plan-modal" class="modal">
     <div class="modal-content">
       <span class="close-modal">&times;</span>
@@ -222,9 +223,9 @@
 
         <h3>TÉRMINOS Y CONDICIONES GENERALES</h3>
         <div class="modal-terms">
-          <p><strong>Entregas:</strong> Plazo de 48h hábiles mediante galería web privada. No se entregan fotos sin editar (RAW) y la selección del material final queda a criterio del fotógrafo para garantizar la calidad.</p>
-          <p><strong>Pagos:</strong> Los precios están calculados en Euros. El pago debe realizarse antes de la entrega final del material. Acepto Transferencia, Pago Móvil, Binance, Wally y divisas en efectivo.</p>
-          <p><strong>Derechos:</strong> Uso en tus RRSS y portales inmobiliarios permitido. Prohibido su uso comercial por terceros sin mención ni autorización.</p>
+          <p><strong>Entregas:</strong> Plazo de 48h hábiles mediante galería web privada. No se entregan fotos sin editar (RAW) y la selección del material final queda a criterio del fotógrafo para garantizar la calidad visual.</p>
+          <p><strong>Pagos:</strong> Las tarifas están calculadas en Euros (Tasa BCV del día). El pago total debe realizarse antes de la entrega del material. Métodos de pago: Transferencia, Pago Móvil, Binance, Wally y Divisas en efectivo.</p>
+          <p><strong>Derechos:</strong> Uso en tus RRSS y portales inmobiliarios permitido. Prohibido su uso comercial por terceros sin mención ni autorización previa.</p>
         </div>
 
         <a id="modal-btn" href="#" target="_blank" class="btn-primary w-100">AGENDAR POR WHATSAPP</a>
@@ -271,10 +272,10 @@
       <div class="footer-col links-col">
         <h4>Navegación</h4>
         <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#portafolio">Portafolio</a></li>
-          <li><a href="#planes">Precios</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          ><a href="#inicio">Inicio</a></li>
+          ><a href="#portafolio">Portafolio</a></li>
+          ><a href="#planes">Precios</a></li>
+          ><a href="#faq">FAQ</a></li>
         </ul>
       </div>
 
