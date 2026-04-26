@@ -5,12 +5,10 @@
   --color-surface: #ffffff; 
   --color-primary: #1864ab; /* Azul Cobalto */
   --color-primary-light: rgba(24, 100, 171, 0.1);
-  --color-primary-shadow: rgba(24, 100, 171, 0.4); /* Para las sombras azules */
+  --color-primary-shadow: rgba(24, 100, 171, 0.4); 
   --color-text: #212529; 
   --color-muted: #6c757d; 
   --color-border: #e9ecef;
-  
-  /* Gradiente para el footer */
   --footer-dark: #0a2540; 
   
   --font-main: 'Montserrat', sans-serif;
@@ -25,7 +23,7 @@ body { font-family: var(--font-main); background: var(--color-bg); color: var(--
 img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 
-/* ANIMACIONES (REVELAR AL SCROLL Y CARGA) */
+/* ANIMACIONES GLOBALES */
 .fade-in-load { animation: globalFadeIn 1s ease-out forwards; }
 @keyframes globalFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
@@ -38,18 +36,16 @@ a { text-decoration: none; color: inherit; }
 section { padding: 6rem 0; }
 .section-subtitle { color: var(--color-muted); margin-bottom: 3rem; }
 
-/* SOMBRAS AZULES PERSONALIZADAS */
+/* SOMBRAS AZULES (Para tu foto y portafolio) */
 .blue-shadow { box-shadow: 0 15px 35px var(--color-primary-shadow); border: 2px solid transparent; transition: var(--transition); }
 .blue-shadow:hover { box-shadow: 0 20px 45px rgba(24, 100, 171, 0.6); transform: translateY(-5px); border-color: var(--color-primary); }
 
 .blue-shadow-hover { transition: var(--transition); }
 .blue-shadow-hover:hover { box-shadow: 0 15px 30px var(--color-primary-shadow); z-index: 10; transform: translateY(-5px); border-radius: 8px; }
 
-/* HEADER DINÁMICO */
+/* HEADER DINÁMICO COMPUTADORA */
 .site-header { position: fixed; width: 100%; top: 0; background: transparent; transition: all 0.4s ease; z-index: 1000; padding: 15px 0; }
 .site-header.scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: var(--shadow-sm); padding: 5px 0; border-bottom: 1px solid var(--color-border); }
-
-/* Color de textos en el header según el estado */
 .site-header .logo strong, .site-header .main-nav a { color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
 .site-header.scrolled .logo strong, .site-header.scrolled .main-nav a { color: var(--color-text); text-shadow: none; }
 .site-header .logo span { color: #ddd; }
@@ -61,6 +57,10 @@ section { padding: 6rem 0; }
 .logo span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
 .main-nav ul { display: flex; gap: 1.5rem; list-style: none; }
 .main-nav a { font-size: 0.9rem; font-weight: 500; transition: var(--transition); }
+
+/* BOTÓN HAMBURGUESA (OCULTO PC) */
+.mobile-menu-btn { display: none; background: transparent; border: none; color: #fff; cursor: pointer; z-index: 1001; }
+.site-header.scrolled .mobile-menu-btn { color: var(--color-text); }
 
 /* BOTONES */
 .btn-primary, .btn-secondary, .btn-cta { display: inline-block; padding: 0.8rem 1.8rem; border-radius: 4px; font-weight: 600; font-size: 0.95rem; transition: var(--transition); text-align: center; cursor: pointer; border: none; }
@@ -84,7 +84,6 @@ section { padding: 6rem 0; }
 .benefit-card { background: var(--color-surface); padding: 2.5rem 1.5rem; border-radius: 8px; box-shadow: var(--shadow-sm); border: 1px solid var(--color-border); transition: var(--transition); }
 .benefit-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px var(--color-primary-shadow); border-color: var(--color-primary-light); }
 .benefit-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
-.benefit-card h3 { font-size: 1.1rem; color: var(--color-text); }
 
 /* SLIDER ANTES / DESPUES */
 .before-after-container { max-width: 800px; margin: 0 auto; position: relative; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); cursor: ew-resize; user-select: none; -webkit-user-drag: none; border: 3px solid white; }
@@ -104,7 +103,7 @@ section { padding: 6rem 0; }
 .copy-hook { font-weight: 600; font-size: 1.1rem; color: var(--color-text); border-left: 3px solid var(--color-primary); padding-left: 1rem; margin-top: 2rem; font-style: italic; }
 .copy-hook-center { font-weight: 600; font-size: 1.1rem; color: var(--color-text); font-style: italic; margin-bottom: 3rem; }
 
-/* PARALLAX DIVIDER */
+/* PARALLAX */
 .parallax-divider { height: 350px; background: url('https://i.postimg.cc/8cvJXcbv/IMG-6279-HDR.jpg') center/cover fixed; position: relative; }
 .parallax-divider::after { content: ''; position: absolute; inset: 0; background: rgba(24, 100, 171, 0.3); }
 
@@ -181,10 +180,10 @@ section { padding: 6rem 0; }
 
 /* FOOTER AZUL CON DEGRADADO */
 .gradient-footer { 
-  background: linear-gradient(to bottom, #ffffff 0%, var(--color-primary) 30%, var(--footer-dark) 100%); 
+  background: linear-gradient(to bottom, #ffffff 0%, var(--color-primary) 20%, var(--footer-dark) 90%); 
   color: #fff; 
   padding: 6rem 0 0 0; 
-  margin-top: -2rem; /* Para que el blanco se funda con la sección de arriba */
+  margin-top: -2rem; 
 }
 .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .logo-footer strong { color: #fff; font-size: 1.4rem; }
@@ -202,7 +201,9 @@ section { padding: 6rem 0; }
 .instagram-link:hover { background: rgba(255,255,255,0.1); border-color: #fff; text-decoration: none !important; }
 .footer-bottom { background: rgba(0,0,0,0.3); padding: 1.5rem 0; text-align: center; color: #ccc; font-size: 0.85rem; }
 
-/* RESPONSIVE */
+/* ====================================================
+   RESPONSIVE (AQUÍ ESTÁ LA SOLUCIÓN DEL MENÚ MÓVIL)
+   ==================================================== */
 @media (max-width: 992px) {
   .about-grid, .pricing-grid { grid-template-columns: 1fr; gap: 3rem; }
   .glow-effect { animation: none; transform: scale(1); box-shadow: 0 10px 30px var(--color-primary-shadow); border-color: var(--color-primary); }
@@ -210,16 +211,37 @@ section { padding: 6rem 0; }
   .brand-col p { margin: 1rem auto; }
   .links-col h4, .contact-col h4 { margin: 0 auto 1.5rem auto; }
 }
+
 @media (max-width: 800px) {
   .img-before-wrapper img { width: 100vw; }
   .modal-gallery { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 768px) {
-  .header-wrap { flex-direction: column; height: auto; padding: 1rem 0; gap: 1rem; }
-  .main-nav ul { flex-wrap: wrap; justify-content: center; }
-  .hero-content h1 { font-size: 2.5rem; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .before-after-container { height: 250px; }
-  .site-header { background: rgba(255,255,255,0.95); } /* Header siempre blanco en móvil para legibilidad */
+  /* Arreglo del Header para móviles */
+  .header-wrap { flex-direction: row; height: 60px; padding: 0; }
+  .site-header { background: rgba(255,255,255,0.95); padding: 5px 0; border-bottom: 1px solid var(--color-border); }
   .site-header .logo strong, .site-header .main-nav a { color: var(--color-text); text-shadow: none;}
+  .site-header .logo span { color: var(--color-muted); }
+  .logo strong { font-size: 1rem; }
+  .logo span { font-size: 0.6rem; }
+  
+  /* Ocultar botón CTA y mostrar hamburguesa */
+  .btn-cta { display: none; } 
+  .mobile-menu-btn { display: block; padding: 10px; color: var(--color-text); }
+  
+  /* Menú desplegable móvil */
+  .main-nav { position: absolute; top: 100%; left: 0; width: 100%; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(10px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); padding: 0; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+  .main-nav.active { max-height: 400px; border-top: 1px solid var(--color-border); }
+  .main-nav ul { flex-direction: column; gap: 0; text-align: center; padding: 1rem 0; }
+  .main-nav li { width: 100%; }
+  .main-nav a { display: block; padding: 12px 20px; color: var(--color-text) !important; font-size: 1rem; border-bottom: 1px solid rgba(0,0,0,0.05); text-shadow: none !important; }
+
+  /* Ajustes generales móviles */
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-content p { font-size: 1rem; }
+  .hero-actions { flex-direction: column; width: 100%; padding: 0 20px; }
+  .hero-actions a { width: 100%; }
+  .benefits-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .before-after-container { height: 250px; }
 }
