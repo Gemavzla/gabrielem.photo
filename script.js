@@ -1,38 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // 1. ANIMACIONES DE REVELADO AL HACER SCROLL (INTERSECTION OBSERVER)
+  // 1. MENÚ MÓVIL (HAMBURGUESA) FUNCIONAL
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mainNav = document.getElementById('main-nav');
+  const siteHeader = document.getElementById('main-header');
+
+  if (mobileBtn && mainNav) {
+    mobileBtn.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+    });
+
+    const navLinks = mainNav.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+  }
+
+  // 2. ANIMACIONES DE REVELADO AL HACER SCROLL
   const revealElements = document.querySelectorAll('.reveal');
-  
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
-        // Opcional: Descomenta la siguiente línea si quieres que la animación suceda SOLO LA PRIMERA VEZ
-        // observer.unobserve(entry.target); 
       } else {
-        // Si quieres que el efecto se repita al subir y bajar, déjalo así. 
         entry.target.classList.remove('active');
       }
     });
-  }, {
-    root: null,
-    threshold: 0.15, // Se activa cuando el 15% del elemento es visible
-    rootMargin: "0px 0px -50px 0px"
-  });
-
+  }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
   revealElements.forEach(el => revealObserver.observe(el));
 
-  // 2. HEADER DINÁMICO (Cambia de transparente a blanco al bajar)
-  const header = document.getElementById('main-header');
+  // 3. HEADER DINÁMICO PC
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.classList.add('scrolled');
+      siteHeader.classList.add('scrolled');
     } else {
-      header.classList.remove('scrolled');
+      siteHeader.classList.remove('scrolled');
     }
   });
 
-  // 3. SCROLL SUAVE DEL MENÚ
+  // 4. SCROLL SUAVE DEL MENÚ
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -43,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4. ACORDEÓN FAQ
+  // 5. ACORDEÓN FAQ
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 5. FILTROS DE PORTAFOLIO
+  // 6. FILTROS DE PORTAFOLIO
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -70,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryItems.forEach(item => {
         if(filter === 'todos' || item.getAttribute('data-category') === filter) {
           item.style.display = 'block';
-          setTimeout(() => item.classList.add('active'), 50); // Re-animar al filtrar
+          setTimeout(() => item.classList.add('active'), 50);
         } else {
           item.style.display = 'none';
           item.classList.remove('active');
@@ -79,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 6. SLIDER ANTES/DESPUÉS
+  // 7. SLIDER ANTES/DESPUÉS
   const container = document.getElementById('ba-container');
   const sliderHandle = document.getElementById('slider-handle');
   const beforeWrapper = document.getElementById('img-before-wrap');
@@ -104,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('touchmove', updateSlider);
   }
 
-  // 7. VISOR DE IMÁGENES (LIGHTBOX)
+  // 8. VISOR DE IMÁGENES (LIGHTBOX)
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const closeLightbox = document.querySelector('.close-lightbox');
@@ -164,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 8. MODALES DE PLANES 
+  // 9. MODALES DE PLANES (CON TÉRMINOS ACTUALIZADOS)
   const planData = {
     esencial: {
       title: "Paquete Esencial",
