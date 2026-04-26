@@ -1,19 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. SCROLL SUAVE DEL MENÚ
+  // SCROLL SUAVE DEL MENÚ
   document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if(target) {
         window.scrollTo({
-          top: target.offsetTop - 70, // Ajuste por el header fijo
+          top: target.offsetTop - 70, 
           behavior: 'smooth'
         });
       }
     });
   });
 
-  // 2. ACORDEÓN DE FAQ
+  // ACORDEÓN DE FAQ MEJORADO
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
@@ -23,24 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
       // Cerrar todas
       document.querySelectorAll('.faq-answer').forEach(ans => {
         ans.style.maxHeight = null;
-        ans.previousElementSibling.style.color = 'var(--color-text)';
+      });
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('active');
       });
 
       // Abrir la seleccionada si estaba cerrada
       if (!isOpen) {
         answer.style.maxHeight = answer.scrollHeight + "px";
-        question.style.color = 'var(--color-primary)';
+        question.classList.add('active');
       }
     });
   });
 
-  // 3. FILTROS DE PORTAFOLIO (Lógica inicial)
+  // FILTROS DE PORTAFOLIO
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remover clase active
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
